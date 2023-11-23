@@ -64,17 +64,16 @@ export class FavoritesView extends Favorites {
             const { value } = this.root.querySelector('.search input')
 
             this.add(value)
+
+            this.root.querySelector('.search input').value = ''
+            this.root.querySelector('.search input').focus()
         }
     }
 
     update() {
         this.removeAllTr()
-
-        console.log(this.entries)
-
-
-        //if(this.entries.length === 0) {
-        //}
+        this.verifyNull()
+        
 
         this.entries.forEach( user => {
             
@@ -98,6 +97,16 @@ export class FavoritesView extends Favorites {
 
             this.tbody.append(row)
         } )
+    }
+
+    verifyNull() {
+        const sectionNull = this.tbody.querySelector('.null-content')
+
+        if(this.entries.length === 0) {
+            sectionNull.classList.remove('disabled')
+        } else { 
+            sectionNull.classList.add('disabled')
+        }
     }
 
     createRow() {
@@ -128,9 +137,10 @@ export class FavoritesView extends Favorites {
     }
 
     removeAllTr() {
-        this.tbody.querySelectorAll('tr')
-            .forEach((tr) => {
-                tr.remove()
-            })
+        const allTr = this.tbody.querySelectorAll('tr')
+
+        for(var i = allTr.length - 1;i > 0; i--) {
+                allTr[i].remove()
+        }  
     }
 }
