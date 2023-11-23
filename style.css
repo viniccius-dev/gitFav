@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+
+    --ff-primary: 'Roboto', sans-serif;
+    --ff-secondary: 'Roboto Mono', sans-serif;
+    --tc-primary: #FFFFFF;
+    --tc-secondary:  #065E7C;
+    --tc-tertiary: #F75A68;
+    --tc-quaternary: #4E5455;
+    --tc-quinary: #E1E1E6;
+
+
+    --primary-color: #000;
+    --secondary-color: #092D38;
+    --tertiary-color: #06181C;
+    --quaternary-color: #06161B80;   
+}
+
+body {
+    font-size: 1.6rem;
+    background: var(--primary-color);
+}
+
+body * {
+    font-family: var(--ff-primary);
+    color: var(--tc-primary)
+}
+
+.sr-only {
+    position: absolute;
+    width: .1rem;
+    height: .1rem;
+    padding: 0;
+    margin: -.1rem;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+#app {
+    max-width: 112rem;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5rem 0;
+}
+
+header h1 {
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 100%;
+    gap: .5rem;
+}
+
+.search input {
+    height: 4.8rem;
+    border-radius: .5rem;
+    border: none;
+    padding: 1.6rem;
+    background: var(--tertiary-color);
+    width: 100%;
+    max-width: 46.2rem;
+    font-size: 1.5rem;
+}
+
+.search button {
+    display: flex;
+    background-color: var(--tc-secondary);
+    border-radius: .5rem;
+    padding: 0.61rem 3.2rem;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    gap: .8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.search button:hover,
+.search button:hover span {
+    background: var(--tc-primary);
+    color: var(--tc-secondary);
+}
+
+.search button span {
+    font-size: 2.2rem;
+    margin-bottom: .5rem;
+}
+
+.roundborder {
+    border: .1rem solid #205864;
+    border-radius: .8rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: .8rem;
+}
+
+table * {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--tc-quinary);
+}
+
+/* Código para conseguir colocar a barra de rolagem no tbody */
+
+thead, tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+tbody {
+    display: block;
+    max-height: 50rem;
+    overflow: auto;
+}
+
+/*************************************************************/
+
+table th {
+    background: var(--secondary-color);
+    text-align: left;
+    padding: 1.6rem 2.4rem 1.8rem 4rem;
+}
+
+table td {
+    padding: 2.4rem 2.4rem 2.4rem 4rem;
+    text-align: left;
+}
+
+table tr {
+    background: var(--tertiary-color);
+}
+
+table tr:nth-child(odd) {
+    background: var(--quaternary-color);
+}
+
+table tr:not(:nth-last-of-type(1)) {
+    border-bottom: .1rem solid #205864;
+}
+
+td.user {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+td.user img {
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+td.user a {
+    text-decoration: none;
+}
+
+td.user a span {
+    font-weight: normal;
+}
+
+td .remove {
+    background: none;
+    border: none;
+    color: var(--tc-tertiary);
+    cursor: pointer;
+}
+
+.null-content {
+    height: 50rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.disabled {
+    display: none;
+}
+
+.null-content td {
+    display: flex;
+    align-items: center;
+    gap: 6rem;
+}
+
+.null-content td h3 {
+    font-family: var(--ff-secondary);
+    font-size: 3rem;
+    color: var(--tc-quaternary);
+}
+
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: .6rem;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #4A808C;
+    border-radius: 1rem;
+    border: .6rem solid transparent;
+}
