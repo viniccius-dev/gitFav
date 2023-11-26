@@ -3,7 +3,7 @@
 
 ![app-gitfav](https://github.com/viniccius-dev/gitFav/assets/109040394/491f7e4a-5bac-4317-98f2-7ec21be485b1)
 
-![Data Release](https://img.shields.io/badge/data_release-november/23-yellow.svg)
+![Data Release](https://img.shields.io/badge/date_release-november/23-yellow.svg)
 
 ## Descrição do projeto
 
